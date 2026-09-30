@@ -9,7 +9,7 @@
     },
     "rDbGs9Ad5jE": {
      "views": 1029,
-     "ema": 1.27
+     "ema": 0.89
     },
     "UdVyeZyIYpQ": {
      "views": 1017,
@@ -20,8 +20,8 @@
      "ema": 0
     },
     "nz6WL6u_Jv8": {
-     "views": 9,
-     "ema": 0.5
+     "views": 10,
+     "ema": 0.65
     }
    },
    "report_cards": {
@@ -59,8 +59,8 @@
    "seen_comments": [
     "Ugzcj9JqHjOSrz69J054AaABAg",
     "UgzXBXGiJo14HqUxAWl4AaABAg",
-    "Ugzcj9JqHjOSrz69J054AaABAg",
-    "UgzXBXGiJo14HqUxAWl4AaABAg"
+    "UgzXBXGiJo14HqUxAWl4AaABAg",
+    "Ugzcj9JqHjOSrz69J054AaABAg"
    ],
    "h24_history": [
     952,
@@ -86,7 +86,7 @@
     },
     "_gCHGaG52TQ": {
      "views": 339,
-     "ema": 0.1
+     "ema": 0.07
     },
     "PC68LzWNpZk": {
      "views": 1190,
@@ -113,33 +113,33 @@
     "UgwgHlEA6N52mVsMS4t4AaABAg",
     "Ugyg78OH0oiFwdoER3l4AaABAg",
     "Ugy65Kk98lVs-14axbR4AaABAg",
-    "UgwgHlEA6N52mVsMS4t4AaABAg",
     "UgxOFcg98bc4RhJojMZ4AaABAg",
-    "UgzGyWJcvZU58HMXkZV4AaABAg",
-    "UgyZ86GiNayDJR9-gnF4AaABAg",
-    "UgxaaqDJE9ObNvRCLgl4AaABAg",
+    "UgwgHlEA6N52mVsMS4t4AaABAg",
     "Ugz5PLaA8zNaMubeXWV4AaABAg",
-    "Ugy65Kk98lVs-14axbR4AaABAg",
-    "UgwHxA5oJhRSVNiLLAB4AaABAg",
+    "UgzGyWJcvZU58HMXkZV4AaABAg",
     "Ugz0MQcPQw3rrf1nyjp4AaABAg",
     "Ugyg78OH0oiFwdoER3l4AaABAg",
-    "UgwrxjTo5cTg1VBvT4R4AaABAg"
+    "Ugy65Kk98lVs-14axbR4AaABAg",
+    "UgwrxjTo5cTg1VBvT4R4AaABAg",
+    "UgyZ86GiNayDJR9-gnF4AaABAg",
+    "UgxaaqDJE9ObNvRCLgl4AaABAg",
+    "UgwHxA5oJhRSVNiLLAB4AaABAg"
    ]
   },
   "UC6FL8ZvY7OkeY6E__Ucl3Pw": {
    "subs": 11,
    "video_views": {
     "_J_nW8BGoWY": {
-     "views": 1399,
-     "ema": 0.06
+     "views": 1405,
+     "ema": 1.84
     },
     "7ntlTUvX3XU": {
-     "views": 13710,
-     "ema": 3.89
+     "views": 13733,
+     "ema": 9.62
     },
     "HYY0vn1RFFg": {
      "views": 3607,
-     "ema": 0.43
+     "ema": 0.3
     },
     "3DHTWhk7dQE": {
      "views": 38,
@@ -147,7 +147,7 @@
     },
     "BH2nhGsUcXU": {
      "views": 5180,
-     "ema": 48.27
+     "ema": 33.79
     }
    },
    "report_cards": {
@@ -172,11 +172,11 @@
     "UgyxTaTs_sQyyPvQqAl4AaABAg",
     "UgzU2qT8TkBI3wq--CF4AaABAg",
     "UgxqTvihIzyyOt_aCFR4AaABAg",
-    "UgxwvqNH8dmG2TcoItp4AaABAg",
-    "UgwCqd2UDzTx2of7-gl4AaABAg",
+    "UgwEfQWbW0L3mSVJm1B4AaABAg",
     "UgzU2qT8TkBI3wq--CF4AaABAg",
     "UgyxTaTs_sQyyPvQqAl4AaABAg",
-    "UgwEfQWbW0L3mSVJm1B4AaABAg"
+    "UgwCqd2UDzTx2of7-gl4AaABAg",
+    "UgxwvqNH8dmG2TcoItp4AaABAg"
    ],
    "h24_history": [
     2156
@@ -184,5 +184,5 @@
   }
  },
  "seeded": true,
- "updated_at": "2026-09-30T21:51:26.526016+09:00"
+ "updated_at": "2026-09-30T22:44:23.967290+09:00"
 }
