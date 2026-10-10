@@ -15,7 +15,7 @@ import sys
 import webbrowser
 import urllib.parse
 import urllib.request
-from http.server import BaseHTTPRequestHandler, HTTPServer
+from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer as HTTPServer
 from pathlib import Path
 
 # 윈도우 기본 콘솔 인코딩(cp949)에서 한글·기호 출력이 죽지 않도록
@@ -42,8 +42,9 @@ def wait_for_code():
     class H(BaseHTTPRequestHandler):
         def do_GET(self):
             q = urllib.parse.parse_qs(urllib.parse.urlparse(self.path).query)
-            result["code"] = q.get("code", [None])[0]
-            result["error"] = q.get("error", [None])[0]
+            if q.get("code") or q.get("error"):      # favicon 같은 빈 요청이 진짜 코드를 덮지 않게
+                result["code"] = q.get("code", [None])[0]
+                result["error"] = q.get("error", [None])[0]
             self.send_response(200)
             self.send_header("Content-Type", "text/html; charset=utf-8")
             self.end_headers()
@@ -53,9 +54,15 @@ def wait_for_code():
         def log_message(self, *a):
             pass
 
+    # 스레드 서버에서 handle_request()를 돌리면, 응답을 다른 스레드가 처리하는 사이
+    # 루프가 다음 요청을 기다리며 멈춘다(2026-10-10 「인증 완료」가 떴는데 저장이 안 됨).
+    # serve_forever를 뒤에서 돌리고 코드가 들어오면 끈다.
+    import threading, time
     srv = HTTPServer(("localhost", PORT), H)
-    while "code" not in result and "error" not in result:
-        srv.handle_request()
+    threading.Thread(target=srv.serve_forever, daemon=True).start()
+    while not result.get("code") and not result.get("error"):
+        time.sleep(0.3)
+    srv.shutdown()
     srv.server_close()
     if not result.get("code"):
         raise SystemExit(f"인증 거부됨: {result.get('error')}")
