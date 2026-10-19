@@ -37,6 +37,14 @@ def api_get(endpoint, **params):
         return json.load(r)
 
 
+def api_get_videos(ids, part):
+    """videos 조회는 한 번에 50개까지만 된다(넘으면 400). 50개씩 나눠 합친다."""
+    ids, items = list(ids), []
+    for i in range(0, len(ids), 50):
+        items += api_get("videos", part=part, id=",".join(ids[i:i + 50])).get("items", [])
+    return {"items": items}
+
+
 def api_get_auth(token, endpoint, **params):
     """소유자 OAuth로 조회 — 비공개·예약 영상까지 보인다."""
     url = f"{YT}/{endpoint}?" + urllib.parse.urlencode(params)

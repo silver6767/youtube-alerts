@@ -9,7 +9,7 @@ import json
 import sys
 from datetime import datetime, timedelta, timezone
 
-from common import BASE, CONFIG, api_get, fmt, send_telegram
+from common import BASE, CONFIG, api_get, api_get_videos, fmt, send_telegram
 
 STATE_FILE = BASE / "state.json"
 KST = timezone(timedelta(hours=9))
@@ -73,7 +73,7 @@ def main():
 
     video_stats = {}
     if all_video_ids:
-        vresp = api_get("videos", part="statistics", id=",".join(all_video_ids))
+        vresp = api_get_videos(all_video_ids, "statistics")
         video_stats = {v["id"]: v["statistics"] for v in vresp.get("items", [])}
 
     weekday = ["월", "화", "수", "목", "금", "토", "일"][now.weekday()]

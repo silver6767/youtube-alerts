@@ -13,7 +13,7 @@ import statistics
 import sys
 from datetime import datetime, timedelta, timezone
 
-from common import BASE, CONFIG, api_get, fmt, send_telegram
+from common import BASE, CONFIG, api_get, api_get_videos, fmt, send_telegram
 
 STATE_FILE = BASE / "monitor_state.json"
 KST = timezone(timedelta(hours=9))
@@ -114,8 +114,7 @@ def main():
     need_ids |= {c["video_id"] for cs in comments.values() for c in cs if c["video_id"]}
     video_stats, extra_titles, video_secs = {}, {}, {}
     if need_ids:
-        vresp = api_get("videos", part="snippet,statistics,contentDetails",
-                        id=",".join(sorted(need_ids)))
+        vresp = api_get_videos(sorted(need_ids), "snippet,statistics,contentDetails")
         for v in vresp.get("items", []):
             video_stats[v["id"]] = v["statistics"]
             extra_titles[v["id"]] = v["snippet"]["title"]
